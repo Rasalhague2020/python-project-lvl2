@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "Rasalhague2020_gendiff"
+version = "0.1.0"
+description = ""
+authors = ["Yury Silushkin <yusilushkin@yandex.ru>"]
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.7",
+    "Topic :: Education :: Testing"
+]
+packages = [
+    { include = "gendiff" }
+]
+repository = "https://github.com/Rasalhague2020/python-project-lvl2"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.7.9"
+
+[tool.poetry.scripts]
+gendiff = 'gendiff.scripts.gendiff:main'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
