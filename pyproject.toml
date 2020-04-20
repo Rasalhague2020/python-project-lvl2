@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Rasalhague2020_gendiff"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Yury Silushkin <yusilushkin@yandex.ru>"]
 classifiers = [
