@@ -1,5 +1,8 @@
 # Python course - project #2
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/9dcafdf98b720b29c532/maintainability)](https://codeclimate.com/github/Rasalhague2020/python-project-lvl2/maintainability)
+
+
 This is my second Python project on the Hexlet platform.
 See details on [Hexlet site (russian language only)][hex-py1].
 
