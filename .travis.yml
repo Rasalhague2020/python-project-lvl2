@@ -7,9 +7,11 @@ os:
 
 before_install:
   - pip install poetry
+  - pip install pytest
 
 install:
   - make install
 
 script:
   - make lint
+  - make test
