@@ -1,6 +1,6 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID = 099164a99c84a22956315ab2f6a6be4e6b63d4c6b3645849c7b6ba72214f70cd
+    - CC_TEST_REPORTER_ID=099164a99c84a22956315ab2f6a6be4e6b63d4c6b3645849c7b6ba72214f70cd
 
 language: python
 
@@ -26,4 +26,4 @@ script:
   - make test
 
 after_script:
-  - ./cc-test-reporter after-build
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
