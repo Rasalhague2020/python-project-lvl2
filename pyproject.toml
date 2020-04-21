@@ -20,6 +20,7 @@ python = "^3.7"
 [tool.poetry.dev-dependencies]
 flake8 = "^3.7.9"
 pytest = "^5.4.1"
+pytest-cov = "^2.8.1"
 
 [tool.poetry.scripts]
 gendiff = 'gendiff.scripts.gendiff:main'
