@@ -34,8 +34,12 @@ To start the **gendiff** program, type
 
 ### Video tutorial
 
-The process of installation and using **gendiff**:
+The process of installation and using **gendiff** (the case of comparison two JSON files):
 [![asciicast](https://asciinema.org/a/K0pZWZK6hOpZLIl3KjGSTWWbi.svg)](https://asciinema.org/a/K0pZWZK6hOpZLIl3KjGSTWWbi)
+
+And the case of comparison two YAML files:
+[![asciicast](https://asciinema.org/a/IuRZ6pyXftLMAF27ytq1s9rRw.svg)](https://asciinema.org/a/IuRZ6pyXftLMAF27ytq1s9rRw)
+
 
 ### Delete package
 
