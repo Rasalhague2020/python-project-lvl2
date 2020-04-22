@@ -197,7 +197,7 @@ pytest = ">=3.6"
 testing = ["fields", "hunter", "process-tests (2.0.2)", "six", "virtualenv"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "YAML parser and emitter for Python"
 name = "pyyaml"
 optional = false
@@ -234,7 +234,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "976f7e2678604457ce2314556b36aad76ecc76c178ba8ec110e24daeb0a81e7c"
+content-hash = "4ceb37e5de972c86be20a09382a0ef2b91b20ff199f81d97296fa660049c06e6"
 python-versions = "^3.7"
 
 [metadata.files]

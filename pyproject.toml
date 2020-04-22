@@ -16,12 +16,12 @@ repository = "https://github.com/Rasalhague2020/python-project-lvl2"
 
 [tool.poetry.dependencies]
 python = "^3.7"
+pyyaml = "^5.3.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.7.9"
 pytest = "^5.4.1"
 pytest-cov = "^2.8.1"
-pyyaml = "^5.3.1"
 
 [tool.poetry.scripts]
 gendiff = 'gendiff.scripts.gendiff:main'
