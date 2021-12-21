@@ -1,13 +1,27 @@
 import pytest
 
+import os
+
+from gendiff import generator
 
 @pytest.fixture
 def right_diff():
-    test_diff = "{\n- follow: false\nhost: hexlet.io\n\
-    - proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n\
-    + verbose: true\n}"
+    filename = 'right_answer.txt'
+    path = os.path.join(os.getcwd(), 'gendiff', 'tests', filename)
+
+    with open(path, 'r') as file:
+        test_diff = ''
+        for line in file:
+            test_diff += line 
     return test_diff
 
 
 def test_generator(right_diff):
-    assert right_diff == "123"
+    filename_1 = 'file1.json'
+    filename_2 = 'file2.json'
+
+    path_1 = os.path.join(os.getcwd(), 'gendiff', 'tests', filename_1)
+    path_2 = os.path.join(os.getcwd(), 'gendiff', 'tests', filename_2)
+    print('--', path_1)
+    print('--', path_2)
+    assert right_diff == generator.get_gendiff(path_1, path_2)
