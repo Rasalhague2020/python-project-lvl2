@@ -24,4 +24,6 @@ def test_generator(right_diff):
     path_2 = os.path.join(os.getcwd(), 'gendiff', 'tests', filename_2)
     # print('--', path_1)
     # print('--', path_2)
+    print('g-', generator.get_gendiff(path_1, path_2))
+    print('r-', right_diff)
     assert right_diff == generator.get_gendiff(path_1, path_2)
