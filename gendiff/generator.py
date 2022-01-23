@@ -1,5 +1,3 @@
-import os
-
 import json
 
 
@@ -17,14 +15,6 @@ def get_format_diff(key, value_1, value_2):
         return f'    {key}: {value_1}\n'
 
     return f'  - {key}: {value_1}\n  + {key}: {value_2}\n'
-
-
-def dict_trunct(source_dict, mask_dict):
-    result = dict()
-    for key in source_dict:
-        if key not in mask_dict:
-            result[key] = source_dict[key]
-    return result
 
 
 def generate_diff(first_file_path, second_file_path):
@@ -56,8 +46,7 @@ def generate_diff(first_file_path, second_file_path):
         single_line = get_format_diff(k, v1, v2)
         result += single_line
     result += '}\n'
-    
+
     # print('RESULT ==', result)
 
     return result
-

@@ -4,6 +4,7 @@ import os
 
 from gendiff import generator
 
+
 @pytest.fixture
 def right_diff():
     filename = 'right_answer.txt'
@@ -12,7 +13,7 @@ def right_diff():
     with open(path, 'r') as file:
         test_diff = ''
         for line in file:
-            test_diff += line 
+            test_diff += line
     return test_diff
 
 
