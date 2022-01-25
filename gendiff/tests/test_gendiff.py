@@ -5,24 +5,22 @@ import os
 from gendiff import generator
 
 
+def get_full_file_path(filename):
+    return os.path.join(
+        os.getcwd(), 'gendiff', 'tests', 'fixtures', filename
+    )
+
+
 @pytest.fixture
 def right_diff():
     filename = 'right_answer.txt'
-    path = os.path.join(
-        os.getcwd(), 'gendiff', 'tests', 'fixtures', filename
-    )
+    path = get_full_file_path(filename)
 
     with open(path, 'r') as file:
         test_diff = ''
         for line in file:
             test_diff += line
     return test_diff
-
-
-def get_full_file_path(filename):
-    return os.path.join(
-        os.getcwd(), 'gendiff', 'tests', 'fixtures', filename
-    )
 
 
 def test_generator(right_diff):
