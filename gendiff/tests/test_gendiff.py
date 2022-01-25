@@ -19,16 +19,19 @@ def right_diff():
     return test_diff
 
 
+def get_full_file_path(filename):
+    return os.path.join(
+        os.getcwd(), 'gendiff', 'tests', 'fixtures', filename
+    )
+
+
 def test_generator(right_diff):
     filename_1 = 'file1.json'
     filename_2 = 'file2.json'
 
-    path_1 = os.path.join(
-        os.getcwd(), 'gendiff', 'tests', 'fixtures', filename_1
-    )
-    path_2 = os.path.join(
-        os.getcwd(), 'gendiff', 'tests', 'fixtures', filename_2
-    )
+    path_1 = get_full_file_path(filename_1)
+    path_2 = get_full_file_path(filename_2)
+
     # print('--', path_1)
     # print('--', path_2)
     # print('g-', generator.generate_diff(path_1, path_2))
