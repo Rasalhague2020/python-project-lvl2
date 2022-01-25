@@ -8,7 +8,9 @@ from gendiff import generator
 @pytest.fixture
 def right_diff():
     filename = 'right_answer.txt'
-    path = os.path.join(os.getcwd(), 'gendiff', 'tests', filename)
+    path = os.path.join(
+        os.getcwd(), 'gendiff', 'tests', 'fixtures', filename
+    )
 
     with open(path, 'r') as file:
         test_diff = ''
@@ -21,8 +23,12 @@ def test_generator(right_diff):
     filename_1 = 'file1.json'
     filename_2 = 'file2.json'
 
-    path_1 = os.path.join(os.getcwd(), 'gendiff', 'tests', filename_1)
-    path_2 = os.path.join(os.getcwd(), 'gendiff', 'tests', filename_2)
+    path_1 = os.path.join(
+        os.getcwd(), 'gendiff', 'tests', 'fixtures', filename_1
+    )
+    path_2 = os.path.join(
+        os.getcwd(), 'gendiff', 'tests', 'fixtures', filename_2
+    )
     # print('--', path_1)
     # print('--', path_2)
     # print('g-', generator.generate_diff(path_1, path_2))
