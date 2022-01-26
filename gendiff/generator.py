@@ -1,4 +1,9 @@
 import json
+import yaml
+import os
+
+JSON_EXTENSION = ['.json']
+YAML_EXTENSION = ['.yml', '.yaml']
 
 
 def get_format_diff(key, value_1, value_2):
@@ -17,12 +22,24 @@ def get_format_diff(key, value_1, value_2):
     return f'  - {key}: {value_1}\n  + {key}: {value_2}\n'
 
 
-def generate_diff(first_file_path, second_file_path):
-    first_json = json.load(open(first_file_path))
-    second_json = json.load(open(second_file_path))
+def get_structure(file_path):
+    file_extension = os.path.splitext(file_path)[1]
 
-    new = second_json.copy()
-    new.update(first_json)
+    if file_extension in JSON_EXTENSION:
+        return json.load(open(file_path))
+    if file_extension in YAML_EXTENSION:
+        return yaml.load(open(file_path))
+
+
+def generate_diff(first_file_path, second_file_path):
+    # first_json = json.load(open(first_file_path))
+    # second_json = json.load(open(second_file_path))
+
+    first_data = get_structure(first_file_path)
+    second_data = get_structure(second_file_path)
+
+    new = second_data.copy()
+    new.update(first_data)
 
     # for key, value in new.items():
     #     print('***')
@@ -35,8 +52,8 @@ def generate_diff(first_file_path, second_file_path):
     for key in new:
         formated_line.append((
             key,
-            first_json.setdefault(key, None),
-            second_json.setdefault(key, None)
+            first_data.setdefault(key, None),
+            second_data.setdefault(key, None)
         ))
 
     formated_line.sort()
