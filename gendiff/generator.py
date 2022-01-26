@@ -23,18 +23,17 @@ def get_format_diff(key, value_1, value_2):
 
 
 def get_structure(file_path):
-    file_extension = os.path.splitext(file_path)[1]
+    with open(file_path, 'r') as file:
+        file_extension = os.path.splitext(file_path)[1]
+        if file_extension in JSON_EXTENSION:
+            return json.load(file)
+        if file_extension in YAML_EXTENSION:
+            return yaml.safe_load(file)
 
-    if file_extension in JSON_EXTENSION:
-        return json.load(open(file_path))
-    if file_extension in YAML_EXTENSION:
-        return yaml.load(open(file_path))
+    return {}
 
 
 def generate_diff(first_file_path, second_file_path):
-    # first_json = json.load(open(first_file_path))
-    # second_json = json.load(open(second_file_path))
-
     first_data = get_structure(first_file_path)
     second_data = get_structure(second_file_path)
 

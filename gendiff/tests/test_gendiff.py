@@ -24,14 +24,18 @@ def right_diff():
 
 
 def test_generator(right_diff):
-    filename_1 = 'file1.json'
-    filename_2 = 'file2.json'
+    json_first_file = 'file1.json'
+    json_second_file = 'file2.json'
 
-    path_1 = get_full_file_path(filename_1)
-    path_2 = get_full_file_path(filename_2)
+    path_1 = get_full_file_path(json_first_file)
+    path_2 = get_full_file_path(json_second_file)
 
-    # print('--', path_1)
-    # print('--', path_2)
-    # print('g-', generator.generate_diff(path_1, path_2))
-    # print('r-', right_diff)
+    assert right_diff == generator.generate_diff(path_1, path_2)
+
+    yaml_first_file = 'file1.yml'
+    yaml_second_file = 'file2.yml'
+
+    path_1 = get_full_file_path(yaml_first_file)
+    path_2 = get_full_file_path(yaml_second_file)
+
     assert right_diff == generator.generate_diff(path_1, path_2)
